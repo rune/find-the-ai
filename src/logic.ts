@@ -59,6 +59,11 @@ function nextQuestion(game: GameState) {
   game.answers = {}
   game.question = ""
   game.questionNumber++
+
+  if (game.questionNumber > 10) {
+    return
+  }
+
   Rune.ai.promptRequest({ messages: [{ role: "system", content: PROMPT }] })
 }
 
@@ -132,7 +137,11 @@ Rune.initLogic({
         startTimer(game, "scores", SCORE_TIME_LENGTH)
         nextQuestion(game)
       } else if (game.timerName === "scores") {
-        startTimer(game, "question", QUESTION_TIME_LENGTH)
+        if (game.questionNumber < 10) {
+          startTimer(game, "question", QUESTION_TIME_LENGTH)
+        } else {
+          game.timerEndsAt = 0
+        }
       }
     }
   },
