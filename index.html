@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <title>Find the AI</title>
+  </head>
+  <body>
+    <div id="page">
+      <div id="startScreen" class="screen off">
+        <div class="topBar">
+          <div class="infoIcon"></div>
+          <div class="topBarText">Answer the question. Try to fool others into thinking you’re the A.I.</div>
+        </div>
+        <div class="logo"></div>
+        <div id="startButton" class="button buttonOn"><div class="buttonText">Start</div></div>
+      </div>
+      <div id="questionScreen" class="screen off">
+        <div class="topBar">
+          <div class="infoIcon"></div>
+          <div class="topBarText">Answer the question. Try to fool others into thinking you’re the A.I.</div>
+        </div>
+        <div class="logo"></div>
+        <div id="questionNumber">Question 1</div>
+        <div id="question">What’s something you couldn’t live without?</div>
+        <div id="questionInput">
+          <div id="questionInputInner">
+            <textarea id="playerInput" placeholder="Enter your answer here"></textarea>
+            <div id="questionTimer" class="timer">
+              <div id="questionTimerBar" class="timerBar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="voteScreen" class="screen off">
+        <div id="voteTitle">Select the AI response!</div>
+        <div id="voteQuestion">What’s something you couldn’t live without?</div>
+        <div id="voteButtons">
+          <div class="voteButton">
+            <div class="button buttonOn"><div class="buttonText">My lucky left sock.</div></div>
+            <div class="voters">
+              <img src="https://developers.rune.ai/img/avatar-placeholder.png" class="voter">
+              <img src="https://developers.rune.ai/img/avatar-placeholder.png" class="voter">
+              <img src="https://developers.rune.ai/img/avatar-placeholder.png" class="voter">
+            </div>
+          </div>
+          <div class="voteButton">
+            <div class="button buttonOff"><div class="buttonText">Pizza, gotta have all the toppings.</div></div>
+            <div class="voters">
+              <img src="https://developers.rune.ai/img/avatar-placeholder.png" class="voter">
+            </div>
+          </div>
+          <div class="voteButton">
+            <div class="button buttonOff"><div class="buttonText">Pizza, gotta have all the toppings.</div></div>
+            <div class="voters">
+              <img src="https://developers.rune.ai/img/avatar-placeholder.png" class="voter">
+            </div>
+          </div>
+          <div class="voteButton">
+            <div class="button buttonOff"><div class="buttonText">Pizza, gotta have all the toppings. Pizza, gotta have all the toppings.</div></div>
+          </div>
+          <div class="voteButton">
+            <div class="button buttonOff"><div class="buttonText">Pizza, gotta have all the toppings.</div></div>
+          </div>
+          <div class="voteButton">
+            <div class="button buttonOff"><div class="buttonText">Pizza, gotta have all the toppings.</div></div>
+          </div>
+          <div class="voteButton">
+            <div class="button buttonOff"><div class="buttonText">Pizza, gotta have all the toppings.</div></div>
+          </div>
+        </div>
+        <div id="voteTimer" class="timer">
+          <div id="voteTimerBar" class="timerBar"></div>
+        </div>
+      </div>
+      <div id="answerScreen" class="screen enabled">
+        <div class="logo"></div>
+        <div id="correctAnswerLabel">The Correct Answer Was</div>
+        <div id="correctAnswer">My lucky left sock</div>
+        <div id="scores">
+          <div id="scoresInner">
+            <div class="score">
+              <img src="https://developers.rune.ai/img/avatar-placeholder.png" class="scoreAvatar">
+              <div class="scoreName">CokeAndCode</div>
+              <div class="scoreThisRound">+2</div>
+              <div class="scoreTotal">3</div>
+            </div>
+            <div class="score">
+              <img src="https://developers.rune.ai/img/avatar-placeholder.png" class="scoreAvatar">
+              <div class="scoreName">CokeAndCode</div>
+              <div class="scoreThisRound">+2</div>
+              <div class="scoreTotal">3</div>
+            </div>
+            <div class="score">
+              <img src="https://developers.rune.ai/img/avatar-placeholder.png" class="scoreAvatar">
+              <div class="scoreName">CokeAndCode</div>
+              <div class="scoreThisRound">+2</div>
+              <div class="scoreTotal"> 3</div>
+            </div>
+          </div>
+        </div>
+        <div id="answerTimer" class="timer">
+          <div id="answerTimerBar" class="timerBar"></div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/logic.ts"></script>
+    <script type="module" src="/src/client.ts"></script>
+  </body>
+</html>
