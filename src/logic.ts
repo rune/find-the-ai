@@ -4,7 +4,7 @@ import { PROMPT } from "./prompt";
 const AI_PLAYER_ID = "ai";
 const QUESTION_TIME_LENGTH = 20000;
 const VOTE_TIME_LENGTH = 15000;
-const SCORE_TIME_LENGTH = 15000;
+const SCORE_TIME_LENGTH = 20000;
 
 export interface GameState {
   scores: Record<PlayerId, number>;

@@ -29,7 +29,8 @@ div("startButton").addEventListener("click", () => {
 function showScreen(screen: string) {
   if (screen !== currentScreen) {
     if (screen === "questionScreen") {
-      (document.getElementById("playerInput") as HTMLTextAreaElement).value = "";
+      (document.getElementById("playerInput") as HTMLTextAreaElement).value =
+        "";
     }
     div(currentScreen).classList.add("disabled");
     div(currentScreen).classList.remove("enabled");
