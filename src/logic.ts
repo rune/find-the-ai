@@ -4,7 +4,7 @@ import { PROMPT } from "./prompt"
 const AI_PLAYER_ID = "ai"
 const QUESTION_TIME_LENGTH = 20000
 const VOTE_TIME_LENGTH = 15000
-const SCORE_TIME_LENGTH = 20000
+const SCORE_TIME_LENGTH = 15000
 
 export interface GameState {
   scores: Record<PlayerId, number>
@@ -66,7 +66,7 @@ Rune.initLogic({
   minPlayers: 1,
   maxPlayers: 6,
   setup: () => {
-    return {
+    const game = {
       scores: {},
       answers: {},
       answerOrder: [],
@@ -80,6 +80,10 @@ Rune.initLogic({
       timerName: "",
       aiAnswer: "",
     }
+
+    nextQuestion(game)
+
+    return game
   },
   ai: {
     promptResponse: ({ response }, { game }) => {
@@ -93,7 +97,7 @@ Rune.initLogic({
         }
       }
 
-      if (game.timerEndsAt === 0) {
+      if (game.timerEndsAt === 0 && game.started) {
         // first timer on the first question
         startTimer(game, "question", QUESTION_TIME_LENGTH)
       }
@@ -138,9 +142,14 @@ Rune.initLogic({
       game.selections[playerId] = id
     },
     start: (_, { game }) => {
-      // start the game once everyone is in
-      game.started = true
-      nextQuestion(game)
+      if (!game.started) {
+        // start the game once everyone is in
+        game.started = true
+        // first timer on the first question
+        if (game.question.length !== 0) {
+          startTimer(game, "question", QUESTION_TIME_LENGTH)
+        }
+      }
     },
     answer: (answer: string, { game, playerId }) => {
       // provide an answer from a player
