@@ -26,4 +26,4 @@ export const PROMPT =
   "Question: Who is your favorite actor and why?\n" +
   "Answer: Chuck Norris because he the strongest\n" +
   "\n" +
-  "Generate a random question and answer now.\n";
+  "Generate a random question and answer now.\n"
