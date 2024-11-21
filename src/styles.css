@@ -153,6 +153,7 @@ body {
   outline: none;
   color: #93F0F2;
   font-size: 3vh;
+  height: 90%;
 }
 
 #questionTimer {
@@ -201,6 +202,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-right: 10%;
 }
 
 .voters {
@@ -221,7 +223,7 @@ body {
 }
 
 .timerBar {
-  width: 50%;
+  width: 100%;
   height: 100%;
   background: #93F0F2;
 }
@@ -257,7 +259,7 @@ body {
   position: absolute;
   color: #93F0F2;
   text-transform: uppercase;
-  top: 25%;
+  top: 20%;
   font-size: 2.5vh;
 }
 
@@ -268,7 +270,7 @@ body {
   text-align: center;;
   position: absolute;
   color: white;
-  top: 29%;
+  top: 24%;
   font-size: 3.5vh;
   font-weight: bold;
   text-overflow: ellipsis;
@@ -276,8 +278,8 @@ body {
 
 #answerScreen .logo {
   top: 0;
-  width: 50%;
-  height: 25%;
+  width: 45%;
+  height: 20%;
   left: 25%;
 }
 
