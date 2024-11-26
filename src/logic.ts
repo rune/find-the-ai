@@ -68,7 +68,7 @@ function nextQuestion(game: GameState) {
 }
 
 Rune.initLogic({
-  minPlayers: 1,
+  minPlayers: 2,
   maxPlayers: 6,
   setup: () => {
     const game = {
