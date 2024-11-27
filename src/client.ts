@@ -6,6 +6,7 @@ let currentScreen = "startScreen"
 
 const MUSIC = new Audio()
 MUSIC.src = musicUrl
+MUSIC.loop = true
 const CLICK = new Audio()
 CLICK.src = clickUrl
 
