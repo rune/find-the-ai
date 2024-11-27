@@ -19,12 +19,14 @@ export interface GameState {
   timerTotalTime: number
   timerEndsAt: number
   timerName: string
+  ready: Record<string, boolean>
 }
 
 type GameActions = {
   start: () => void
   answer: (answer: string) => void
   select: (id: string) => void
+  ready: () => void
 }
 
 declare global {
@@ -59,6 +61,7 @@ function nextQuestion(game: GameState) {
   game.answers = {}
   game.question = ""
   game.questionNumber++
+  game.ready = {}
 
   if (game.questionNumber > 10) {
     return
@@ -84,6 +87,7 @@ Rune.initLogic({
       timerTotalTime: 0,
       timerName: "",
       aiAnswer: "",
+      ready: {},
     }
 
     nextQuestion(game)
@@ -158,6 +162,19 @@ Rune.initLogic({
         if (game.question.length !== 0) {
           startTimer(game, "question", QUESTION_TIME_LENGTH)
         }
+      }
+    },
+    ready: (_, { game, playerId, allPlayerIds }) => {
+      if (game.timerName === "question") {
+        game.ready[playerId] = true
+
+        for (const id of allPlayerIds) {
+          if (!game.ready[id]) {
+            return
+          }
+        }
+
+        game.timerEndsAt = Rune.gameTime() + 1000
       }
     },
     answer: (answer: string, { game, playerId }) => {

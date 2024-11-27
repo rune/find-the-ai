@@ -19,6 +19,13 @@ function img(id: string): HTMLImageElement | undefined {
   return document.getElementById(id) as HTMLImageElement
 }
 
+div("doneButton").addEventListener("click", () => {
+  div("doneButton").innerHTML = "Ready!"
+  Rune.actions.ready()
+  ;(document.getElementById("playerInput") as HTMLTextAreaElement).disabled =
+    true
+})
+
 div("startButton").addEventListener("click", () => {
   MUSIC.play()
   CLICK.play()
@@ -29,8 +36,12 @@ div("startButton").addEventListener("click", () => {
 function showScreen(screen: string) {
   if (screen !== currentScreen) {
     if (screen === "questionScreen") {
+      div("doneButton").innerHTML = '<div class="buttonText">Submit</div>'
       ;(document.getElementById("playerInput") as HTMLTextAreaElement).value =
         ""
+      ;(
+        document.getElementById("playerInput") as HTMLTextAreaElement
+      ).disabled = false
     }
     div(currentScreen).classList.add("disabled")
     div(currentScreen).classList.remove("enabled")

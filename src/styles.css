@@ -68,6 +68,12 @@ body {
   background-repeat: no-repeat;
 }
 
+#doneButton {
+  position: absolute;
+  width: 50%;
+  bottom: 5%;
+  left: 25%;
+}
 #startButton {
   position: absolute;
   width: 50%;
