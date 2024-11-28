@@ -150,9 +150,17 @@ Rune.initLogic({
     }
   },
   actions: {
-    select: (id: string, { game, playerId }) => {
+    select: (id: string, { game, playerId, allPlayerIds }) => {
       // player selected a answer
       game.selections[playerId] = id
+
+      for (const id of allPlayerIds) {
+        if (!game.selections[id]) {
+          return
+        }
+      }
+
+      game.timerEndsAt = Rune.gameTime() + 1000
     },
     start: (_, { game }) => {
       if (!game.started) {
