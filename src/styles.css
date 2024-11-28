@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Audio";
-  src: url("./assets/Audiowide-Regular.ttf");
+  src: url(assets/Audiowide-Regular.ttf);
 }
 
 @font-face {
   font-family: "Roboto";
-  src: url("./assets/RobotoCondensed-VariableFont_wght.ttf");
+  src: url(assets/RobotoCondensed-VariableFont_wght.ttf);
 }
 
 body {
@@ -16,7 +16,7 @@ body {
 }
 
 #page {
-  background-image: url(./assets/background.png);
+  background-image: url(assets/background.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   position: absolute;
