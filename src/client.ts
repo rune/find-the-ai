@@ -32,6 +32,7 @@ div("startButton").addEventListener("click", () => {
   MUSIC.play()
   CLICK.play()
 
+  div("startButton").innerHTML = "Waiting.."
   Rune.actions.start()
 })
 

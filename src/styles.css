@@ -57,6 +57,17 @@ body {
   margin-right: 2vh;
 }
 
+.logo2 {
+  position: absolute;
+  width: 70%;
+  height: 30%;
+  top: 70%;
+  left: 15%;
+  background-image: url(assets/logo.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
 .logo {
   position: absolute;
   width: 70%;
@@ -71,7 +82,7 @@ body {
 #doneButton {
   position: absolute;
   width: 50%;
-  bottom: 5%;
+  top: 60%;
   left: 25%;
 }
 #startButton {
@@ -109,7 +120,7 @@ body {
 }
 
 #questionNumber {
-  top: 42%;
+  top: 12%;
   position: absolute;
   width: 100%;
   font-size: 3vh;
@@ -121,7 +132,7 @@ body {
 }
 
 #question {
-  top: 46%;
+  top: 15%;
   position: absolute;
   width: 90%;
   left: 5%;
@@ -136,7 +147,7 @@ body {
   width: 90%;
   height: 30%;
   position: absolute;
-  top: 55%;
+  top: 25%;
   left: 5%;
   background: linear-gradient(to bottom, #b7fdff 0%, #159395 100%);
   padding: 2px;

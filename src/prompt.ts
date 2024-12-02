@@ -26,4 +26,4 @@ export const PROMPT =
   "Question: Who is your favorite actor and why?\n" +
   "Answer: Chuck Norris because he the strongest\n" +
   "\n" +
-  "Generate a random question and answer now.\n"
+  "Make sure questions cover a wide range of topics that would be relevant to 14-25 year olds. Do not repeat questions. Generate a random question and answer now.\n"

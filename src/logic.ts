@@ -4,7 +4,7 @@ import { PROMPT } from "./prompt"
 const AI_PLAYER_ID = "ai"
 const QUESTION_TIME_LENGTH = 20000
 const VOTE_TIME_LENGTH = 15000
-const SCORE_TIME_LENGTH = 15000
+const SCORE_TIME_LENGTH = 5000
 
 export interface GameState {
   scores: Record<PlayerId, number>
@@ -13,6 +13,7 @@ export interface GameState {
   aiAnswer: string
   answerOrder: string[]
   selections: Record<string, string>
+  readyToStart: Record<string, boolean>
   started: boolean
   questionNumber: number
   question: string
@@ -88,6 +89,7 @@ Rune.initLogic({
       timerName: "",
       aiAnswer: "",
       ready: {},
+      readyToStart: {},
     }
 
     nextQuestion(game)
@@ -162,8 +164,15 @@ Rune.initLogic({
 
       game.timerEndsAt = Rune.gameTime() + 1000
     },
-    start: (_, { game }) => {
+    start: (_, { game, playerId, allPlayerIds }) => {
       if (!game.started) {
+        game.readyToStart[playerId] = true
+        for (const id of allPlayerIds) {
+          if (!game.readyToStart[id]) {
+            return
+          }
+        }
+
         // start the game once everyone is in
         game.started = true
         // first timer on the first question
